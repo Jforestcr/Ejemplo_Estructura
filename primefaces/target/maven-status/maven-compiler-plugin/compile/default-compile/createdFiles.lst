@@ -1,0 +1,6 @@
+com/Ingresar.class
+com/VerPersonas.class
+com/mycompany/primefaces/resources/JavaEE8Resource.class
+dao/Persona.class
+dao/PersonaRepositorio.class
+com/mycompany/primefaces/JAXRSConfiguration.class

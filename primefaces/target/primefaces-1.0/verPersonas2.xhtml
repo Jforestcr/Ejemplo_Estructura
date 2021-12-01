@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <body>
+        <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+                <table class="table" style="width: 100%">
+                    <thead class="thead-dark">
+                        <th>Identificación</th>
+                        <th>Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="persona" items="${verPersonas.listaPersonas}">
+                            <tr>
+                                <td>${persona.identificacion}</td>
+                                <td>${persona.nombre}</td>
+                                <td>${persona.apellido1}</td>
+                                <td>${persona.apellido2}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

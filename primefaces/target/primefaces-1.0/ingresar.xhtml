@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <body>
+        <ui:composition template="./plantilla/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form class="container" style="width: 100%">
+                    <div class="form-group row">
+                        <h:outputLabel value="Identificación" for="id" class="col-sm-2 col-form-label"/>
+                        <div class="col-sm-3">
+                            <h:inputText id="id" required="true" requiredMessage="Campo Obligatorio" class="form-control" value="#{ingresar.identificacion}">
+                                <p:ajax event="blur" process="id" listener="#{ingresar.validarIdentificacion()}" update="mensajeIdentificacion bloquearBoton"/>
+                            </h:inputText>
+                            <h:message for="id" class="text-danger"/>
+                            <h:outputText id="mensajeIdentificacion" value="#{ingresar.mensajeIdentificacion}" class="text-danger"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel value="Nombre" for="nombre" class="col-sm-2 col-form-label"/>
+                        <div class="col-sm-3">
+                            <h:inputText id="nombre" required="true" requiredMessage="Campo Obligatorio" class="form-control" value="#{ingresar.nombre}"/>
+                            <h:message for="nombre" class="text-danger"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel value="Primer Apellido" for="apellido1" class="col-sm-2 col-form-label"/>
+                        <div class="col-sm-3">
+                            <h:inputText id="apellido1" required="true" requiredMessage="Campo Obligatorio" class="form-control" value="#{ingresar.apellido1}"/>
+                            <h:message for="apellido1" class="text-danger"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel value="Segundo Apellido" for="apellido2" class="col-sm-2 col-form-label"/>
+                        <div class="col-sm-3">
+                            <h:inputText id="apellido2" required="true" requiredMessage="Campo Obligatorio" class="form-control" value="#{ingresar.apellido2}"/>
+                            <h:message for="apellido2" class="text-danger"/>
+                        </div>
+                    </div>
+                    <div style="text-align: center">
+                        <h:commandButton id="bloquearBoton" value="Guardar" action="#{ingresar.guardarInformacion()}" class="btn btn-primary"
+                                         disabled="#{ingresar.bloquearBoton}"/>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
