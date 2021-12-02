@@ -1,0 +1,6 @@
+dao\PersonaRepositorio.class
+com\index.class
+dao\Conexion_Hibernate.class
+serviciosWeb\PersonaResource.class
+serviciosWeb\JAXRSConfiguration.class
+dao\Persona.class
